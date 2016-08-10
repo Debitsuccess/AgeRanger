@@ -24,9 +24,15 @@ Development environment: Visual Studio 2015
 API endpoints:
 
 GET /people - gets all people.
+
 GET /people?firstname={firstname} - finds all people matching the specified first name.
+
 GET /people?lastname={lastname} - finds all people matching the specified last name.
+
 GET /people/{id} - gets the person that matches the specified ID - ID is an int.
+
 POST /people - creates a new person.
+
 PUT /people/{id} - updates a person.
+
 DELETE /people/{id} - deletes a person.
