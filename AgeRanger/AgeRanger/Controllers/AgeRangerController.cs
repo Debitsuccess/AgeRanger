@@ -58,7 +58,7 @@ namespace AgeRanger.Controllers
 
         [Route("{id}")]
         [HttpPut]
-        public void Update(int id, Person person)
+        public Person Update(int id, Person person)
         {
             if (person == null)
             {
@@ -66,7 +66,7 @@ namespace AgeRanger.Controllers
                 var response = HttpResponseFactory.ConstructResponse(HttpStatusCode.BadRequest, errMessage);
                 throw new HttpResponseException(response);
             }
-            _ageRangerService.UpdatePerson(id, person);
+            return _ageRangerService.UpdatePerson(id, person);
         }
 
         [Route("{id}")]

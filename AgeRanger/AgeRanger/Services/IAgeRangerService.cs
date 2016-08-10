@@ -11,7 +11,7 @@ namespace AgeRanger.Services
         List<Person> SearchPersonByLastName(string lastName);
         Person GetPersonById(int id);
         void AddPerson(Person person);
-        void UpdatePerson(int id, Person person);
+        Person UpdatePerson(int id, Person person);
         void DeletePerson(int id);
     }
 }

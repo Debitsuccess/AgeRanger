@@ -39,9 +39,9 @@ namespace AgeRanger.Services
             return _ageRangerDao.LoadPersonByLastName(lastName);
         }
 
-        public void UpdatePerson(int id, Person person)
+        public Person UpdatePerson(int id, Person person)
         {
-            _ageRangerDao.UpdatePerson(id, person);
+           return _ageRangerDao.UpdatePerson(id, person);
         }
     }
 }

@@ -27,7 +27,7 @@ namespace AgeRanger.Dao
         {
             using (var conn = Helpers.NewConnection())
             {
-                string query = @"select  p.Id, p.FirstName, p.LastName, p.Age, a.Description as AgeGroup 
+                string query = @"select  p.Id Id, p.FirstName, p.LastName, p.Age, a.Description AgeGroup 
                                 from Person p, AgeGroup a where p.FirstName = @FirstName and p.Age between a.MinAge and a.MaxAge-1";
                 var result = conn.Query<Person>(query, new { firstName });
 
@@ -40,7 +40,8 @@ namespace AgeRanger.Dao
         {
             using (var conn = Helpers.NewConnection())
             {
-                string query = @"select * from Person where Id = @Id";
+                string query = @"select  p.Id Id, p.FirstName FirstName, p.LastName LastName, p.Age, a.Description AgeGroup 
+                                from Person p, AgeGroup a where p.Id = @Id and p.Age between a.MinAge and a.MaxAge-1";
                 var person = conn.Query<Person>(query, new { id }).SingleOrDefault(); ;
                 return person;
             }
@@ -50,7 +51,7 @@ namespace AgeRanger.Dao
         {
             using (var conn = Helpers.NewConnection())
             {
-                string query = @"select  p.Id, p.FirstName, p.LastName, p.Age, a.Description as AgeGroup 
+                string query = @"select  p.Id Id, p.FirstName FirstName, p.LastName LastName, p.Age, a.Description AgeGroup 
                                 from Person p, AgeGroup a where  p.LastName = @LastName and p.Age between a.MinAge and a.MaxAge-1";
                 var result = conn.Query<Person>(query, new { lastName });
 
@@ -68,7 +69,7 @@ namespace AgeRanger.Dao
             } 
         }
 
-        public void UpdatePerson(int id, Person person)
+        public Person UpdatePerson(int id, Person person)
         {
             using (var conn = Helpers.NewConnection())
             {
@@ -84,6 +85,7 @@ namespace AgeRanger.Dao
                         Id = id
                     });
                 }
+                return LoadPersonById(id);
             }
         }
 
