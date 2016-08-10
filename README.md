@@ -16,3 +16,17 @@ Last, but not the least - our sales manager suggests you'll get bonus points if 
 You are free to use any technology and frameworks you need. However if you decide to go with third party package manager or dev tool - don't forget to mention them in the README.md of your fork.
 
 Good luck!
+
+--Jin's implementation--
+
+Development environment: Visual Studio 2015
+
+API endpoints:
+
+GET /people - gets all people.
+GET /people?firstname={firstname} - finds all people matching the specified first name.
+GET /people?lastname={lastname} - finds all people matching the specified last name.
+GET /people/{id} - gets the person that matches the specified ID - ID is an int.
+POST /people - creates a new person.
+PUT /people/{id} - updates a person.
+DELETE /people/{id} - deletes a person.
