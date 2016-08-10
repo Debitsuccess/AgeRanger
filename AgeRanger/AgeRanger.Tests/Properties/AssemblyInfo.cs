@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AgeRanger.Tests")]
+[assembly: AssemblyTitle("refactor-me.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("AgeRanger.Tests")]
+[assembly: AssemblyProduct("refactor-me.Tests")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("db867fae-8baa-45d6-922c-b8579569a1bd")]
+[assembly: Guid("8a67420b-a2b5-419f-afaa-8ac49b1b754c")]
 
 // Version information for an assembly consists of the following four values:
 //

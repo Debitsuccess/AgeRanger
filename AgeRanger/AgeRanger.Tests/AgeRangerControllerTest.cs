@@ -7,9 +7,10 @@ using System.Collections.Generic;
 namespace AgeRanger.Tests
 {
     [TestClass]
-    public class AgeRangerControllerTest
+    public class ProductsControllerTest
     {
         private AgeRangerController _controller = new AgeRangerController();
+
         [TestMethod]
         public void GetAllPeople()
         {

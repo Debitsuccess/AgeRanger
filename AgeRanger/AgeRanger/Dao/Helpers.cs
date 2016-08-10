@@ -20,8 +20,8 @@ namespace AgeRanger.Dao
             {
                 var separator = Path.DirectorySeparatorChar;
                 var currentPath = AppDomain.CurrentDomain.BaseDirectory;
-                var dataPath = currentPath.Substring(0, currentPath.LastIndexOf(separator + "refactor-me.Tests"));
-                connstr = ConnectionString.Replace("{DataDirectory}", dataPath + separator + "refactor-me" + separator + "App_Data");
+                var dataPath = currentPath.Substring(0, currentPath.LastIndexOf(separator + "AgeRanger.Tests"));
+                connstr = ConnectionString.Replace("{DataDirectory}", dataPath + separator + "AgeRanger" + separator + "App_Data");
             }
             return new SqlConnection(connstr);
         }
