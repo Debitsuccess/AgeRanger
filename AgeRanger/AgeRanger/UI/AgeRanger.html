@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Ranger</title>
+	<meta charset="utf-8" />
+
+    <link rel="stylesheet" href="../Content/CSS/MainStyle.css" type="text/css"/>
+    <link rel="stylesheet" href="../Content/bootstrap.css" type="text/css" />
+
+    <script type="text/javascript" src="../Scripts/angular.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../Scripts/angular-route.js"></script>
+    <script type="text/javascript" src="../JS/Controller/mainController.js"></script>
+    <script type="text/javascript" src="../JS/Controller/homeController.js"></script>
+    <script type="text/javascript" src="../JS/Controller/addController.js"></script>
+    <script type="text/javascript" src="../JS/Controller/searchController.js"></script>
+</head>
+<body ng-app="AgeRangerApp">
+    <div class="mainContainer">
+        <div>
+            <ul class="nav nav-tabs">
+                <li><a href="#/">Home</a></li>
+                <li><a href="#/Search">Search</a></li>
+                <li><a href="#/Add">Add</a></li>
+            </ul>
+        </div>
+        <div ng-view class="contentStyle">
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿<div>
+    <form>
+        <div>
+            <label>First Name</label>
+            <input type="text" ng-model="people.FirstName" />
+            <button ng-click="searchByFName()">Search People</button>
+        </div>
+        <div>
+            <label>Second Name</label>
+            <input type="text" ng-model="people.LastName" />
+            <button ng-click="searchByLName()">Search People</button>
+        </div>
+        
+    </form>
+    <div>
+        <h1>Result</h1>
+        <form>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Age</th>
+                        <th>Age Group</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="people in peopleList">
+                        <td>{{people.FirstName}}</td>
+                        <td>{{people.LastName}} </td>
+                        <td>{{people.Age}} </td>
+                        <td>{{people.AgeGroup}}</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>

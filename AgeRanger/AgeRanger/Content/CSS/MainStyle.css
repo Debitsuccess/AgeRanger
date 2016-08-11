@@ -1,0 +1,22 @@
+﻿.mainContainer {
+    width: 1200px;
+    margin:auto;
+    margin-top:100px;
+}
+.mainTabItem
+{
+    width:100px;
+}
+.contentStyle
+{
+    width:100%;
+    margin:auto;
+}
+label
+{
+    width:100px;
+}
+div
+{
+    margin-bottom:10px;
+}
