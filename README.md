@@ -21,6 +21,8 @@ Good luck!
 
 Development environment: Visual Studio 2015
 
+Technologies and frameworks: WEB API (RESTful API), NUnit, AngularJs, Dapper, Bootstrap, SQL Server 
+
 API endpoints:
 
 GET /people - gets all people.
@@ -36,3 +38,9 @@ POST /people - creates a new person.
 PUT /people/{id} - updates a person.
 
 DELETE /people/{id} - deletes a person.
+
+How to run the app:
+
+Step 1: Open AgeRanger.sln in VS2015, run AgeRanger project.
+
+Step 2: Open \AgeRanger\UI\AgeRanger.html in any browser. Enjoy!
