@@ -41,6 +41,6 @@ DELETE /people/{id} - deletes a person.
 
 How to run the app:
 
-Step 1: Open AgeRanger.sln in VS2015, run AgeRanger project.
+Step 1: Open AgeRanger.sln in VS2015.
 
-Step 2: Open \AgeRanger\UI\AgeRanger.html in any browser. Enjoy!
+Step 2: Right click \AgeRanger\UI\AgeRanger.html and choose view in browser. Enjoy!
