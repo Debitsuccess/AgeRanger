@@ -1,0 +1,29 @@
+﻿<div class="contentStyle">
+    <form>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                    <th>Age Group</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="people in peopleList">
+                    <td><input type="text" ng-model="people.FirstName"  ng-disabled="editablilty[$index]"/></td>
+                    <td><input type="text" ng-model="people.LastName" ng-disabled="editablilty[$index]"/></td>
+                    <td><input type="text" ng-model="people.Age" ng-disabled="editablilty[$index]"/></td>
+                    <td><input type="text" ng-model="people.AgeGroup" disabled ="disabled" /></td>
+                    <td>
+                        <button ng-click="edit($index)" ng-hide="hideEdit[$index]">edit</button>
+                        <button ng-click="finishEdit($index)" ng-show="hideEdit[$index]">finish</button>
+                        <button ng-click="delete($index)">delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    
+
+</div>
