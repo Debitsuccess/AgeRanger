@@ -1,0 +1,29 @@
+﻿<div>
+    <p/>
+    <form class="form-horizontal" role="form" ng-submit="updatePerson()" >
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">First Name:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="firstname" name="firstName" ng-model="person.firstName" placeholder="Enter First Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Last Name:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="lastname" name="lastName" ng-model="person.lastName" placeholder="Enter Last Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Age:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="age" name="lastName" ng-model="person.age" placeholder="Enter Age">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button class="btn btn-default">Cancel</button>
+                <input  class="btn btn-default" type="submit" id="submit" value="Submit"/>
+            </div>
+        </div>        
+    </form>
+</div>

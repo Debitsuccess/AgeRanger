@@ -1,3 +1,10 @@
+Created an ASP.NET MVC Core 1.0 web application - runs from VS 2015.
+
+Technologies are - AngularJS 1.5, Bootstrap 3.3, EF & Web API Core 1.0
+
+Publish to Kestrel (via dotnet run) causes Angular errors - investigating.
+
+
 AgeRanger is a world leading application designed to identify person's age group!
 The only problem with it is... It is not implemented - except a SQLite DB called AgeRanger.db.
 
