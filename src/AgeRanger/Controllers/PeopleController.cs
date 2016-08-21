@@ -40,8 +40,11 @@ namespace AgeRanger.Controllers
         
         //POST api/people/personObject                
         [HttpPost]
-        public OkObjectResult Post([FromBody]PersonDto person)
+        public ActionResult Post([FromBody]PersonDto person)
         {
+            var errors = ValidatePerson(person);
+            if (errors.Length > 0) return Json(errors);
+
             _ageRangerRepository.Add(new Person()
             {
                 FirstName = person.FirstName,
@@ -50,11 +53,26 @@ namespace AgeRanger.Controllers
             });
             return Ok(person);
         }
-        
+
+        private string ValidatePerson(PersonDto person)
+        {
+            string errors = "";
+
+            if (string.IsNullOrEmpty(person.FirstName)) errors += "FirstName is empty.";
+            if (string.IsNullOrEmpty(person.LastName)) errors += "LastName is empty.";
+            if (person.Age ==0) errors += "Age is not specified.";
+
+            if (errors.Length > 0) return "Validation errors: " + errors;
+            return errors;
+        }
+
         //PUT api/people/personObject
         [HttpPut("{id}")]
-        public OkObjectResult Put(int id, [FromBody]PersonDto person)
+        public ActionResult Put(int id, [FromBody]PersonDto person)
         {
+            var errors = ValidatePerson(person);
+            if (errors.Length > 0) return Json(errors);
+
             _ageRangerRepository.Update(person);
             return Ok(person);
         }        

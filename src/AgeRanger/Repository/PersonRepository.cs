@@ -55,7 +55,7 @@ namespace AgeRanger.Repository
                     FirstName = person.FirstName,
                     LastName = person.LastName,
                     Age = person.Age,
-                    AgeGroup = currentAgeGroup.Description
+                    AgeGroup = currentAgeGroup==null ? "undefined" :currentAgeGroup.Description
                 });
             }
             return listOfPeople;

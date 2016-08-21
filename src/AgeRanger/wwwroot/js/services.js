@@ -1,7 +1,8 @@
 ﻿angular.module('peopleApp')
     .factory('peopleFactory', ['$http', '$resource', function ($http, $q) {
         var urlBase = '/api/people';
-        var dataFactory = {};              
+        var dataFactory = {};
+
         dataFactory.getPeople = function () {
             return $http.get(urlBase + '?_=' + new Date().getTime());
         };
@@ -21,4 +22,6 @@
             return $http.delete(urlBase + '/' + id);
         };
         return dataFactory;
-    }])
+    }]);
+
+

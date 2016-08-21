@@ -9,6 +9,7 @@ using System.IO;
 using Moq;
 using Xunit;
 using AgeRanger.Controllers;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AgeRanger.Tests
 {
@@ -35,7 +36,7 @@ namespace AgeRanger.Tests
             var testPerson = FetchOnePersonDto().First();
             var result = peopleController.Post(testPerson);
 
-            Assert.Equal(result.Value, testPerson);
+            Assert.Equal(result.GetType(), typeof(OkObjectResult));
         }
 
         [Fact]
@@ -63,10 +64,9 @@ namespace AgeRanger.Tests
             peopleRepository.Setup(x => x.FindById(personId)).Returns(personToUpdate);
 
             var peopleController = new PeopleController(peopleRepository.Object);
+            ActionResult result = peopleController.Put(personId, personToUpdate.First());
 
-            var result = peopleController.Put(personId, personToUpdate.First());
-
-            Assert.Equal(result.Value, personToUpdate.First());
+            Assert.Equal(result.GetType(), typeof(OkObjectResult));
         }
 
         public static IEnumerable<PersonDto> FetchListOfPeopleDto()

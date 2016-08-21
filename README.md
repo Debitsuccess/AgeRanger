@@ -1,9 +1,16 @@
-Created an ASP.NET MVC Core 1.0 web application - runs from VS 2015.
+Created an ASP.NET MVC Core 1.0 web application.
 
-Technologies are - AngularJS 1.5, Bootstrap 3.3, EF & Web API Core 1.0
+Technologies are - AngularJS 1.5, Bootstrap 3.3, xUnit, Moq EF & Web API Core 1.0
 
-Publish to Kestrel (via dotnet run) causes Angular errors - investigating.
+Steps for building/running:
+1.  Install .NET Core SDK 1.0 (https://www.microsoft.com/net/core#windows)
+2.  Brwose to src/AgeRanger via the command prompt.
+3.  Type dotnet run to run on Kestrel.
+4.  Type dotnet test to run all tests.
+5.  Update connection string in appsettings.json to switch to SQL Server when ready.
 
+
+Original description follows:
 
 AgeRanger is a world leading application designed to identify person's age group!
 The only problem with it is... It is not implemented - except a SQLite DB called AgeRanger.db.
