@@ -1,0 +1,31 @@
+﻿<p/>
+<div>    
+    <form role="form">
+        <div class="form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter keywords" ng-model="searchKeyword">                
+                <input type="button" value="Search" class="btn btn-primary" ng-click="filterPeople()" />
+            </div>
+        </div>
+    </form>
+    <p />
+    <p />
+    <a href="#/new"><input type="button" value="Add New" class="btn btn-primary" /></a>    
+    <p />
+    <table class="table col-sm-4">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Age Group</th>
+            <th>Action</th>
+        </tr>
+        <tr ng-repeat="person in people">
+            <td>{{person.firstName}} {{person.lastName}}</td>
+            <td>{{person.age}}</td>
+            <td>{{person.ageGroup}}</td>
+            <td>                
+                <input type="button" value="Edit" class="btn btn-primary" ng-click="editRow(person.id)" />
+            </td>
+        </tr>
+    </table>
+</div>

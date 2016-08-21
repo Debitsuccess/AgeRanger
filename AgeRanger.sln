@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EFCEA822-26D4-46F3-BD80-3A7E32A8E969}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{48E6F18E-517A-436E-BA9B-22231A5091C6}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+		..\..\..\..\Sample\global.json = ..\..\..\..\Sample\global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AgeRanger", "src\AgeRanger\AgeRanger.xproj", "{EDB3915E-E3A1-412C-8629-09751BAF67DA}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AgeRanger.Tests", "src\AgeRanger.Tests\AgeRanger.Tests.xproj", "{452CED1C-CBA6-4139-ADCB-F4AE7FA82EAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDB3915E-E3A1-412C-8629-09751BAF67DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDB3915E-E3A1-412C-8629-09751BAF67DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDB3915E-E3A1-412C-8629-09751BAF67DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDB3915E-E3A1-412C-8629-09751BAF67DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{452CED1C-CBA6-4139-ADCB-F4AE7FA82EAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{452CED1C-CBA6-4139-ADCB-F4AE7FA82EAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{452CED1C-CBA6-4139-ADCB-F4AE7FA82EAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{452CED1C-CBA6-4139-ADCB-F4AE7FA82EAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EDB3915E-E3A1-412C-8629-09751BAF67DA} = {EFCEA822-26D4-46F3-BD80-3A7E32A8E969}
+		{452CED1C-CBA6-4139-ADCB-F4AE7FA82EAF} = {EFCEA822-26D4-46F3-BD80-3A7E32A8E969}
+	EndGlobalSection
+EndGlobal
