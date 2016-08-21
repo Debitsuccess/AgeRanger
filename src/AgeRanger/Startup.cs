@@ -10,6 +10,8 @@ namespace AgeRanger
 {
     public class Startup
     {
+        string connectionString = "";
+
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -21,14 +23,15 @@ namespace AgeRanger
             if (env.IsDevelopment())
             {
                 // This will push telemetry data through Application Insights pipeline faster, allowing you to view results immediately.
-                builder.AddApplicationInsightsSettings(developerMode: true);
+                //builder.AddApplicationInsightsSettings(developerMode: true);
             }
-            using (var db = new Models.AgeRangerContext())
+
+            Configuration = builder.Build();
+            using (var db = new Models.AgeRangerContext(Configuration))
             {
                 db.Database.EnsureCreated();
                 db.Database.Migrate();
             }
-            Configuration = builder.Build();
         }
 
         public IConfigurationRoot Configuration { get; }
@@ -36,11 +39,13 @@ namespace AgeRanger
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
-            services.AddApplicationInsightsTelemetry(Configuration);
+            //services.AddApplicationInsightsTelemetry(Configuration);
 
+            services.AddSingleton(typeof(IConfigurationRoot), Configuration);
             services.AddEntityFrameworkSqlite().AddDbContext<Models.AgeRangerContext>();
-            
+            //services.AddEntityFrameworkSqlite().AddDbContext<Models.AgeRangerContext>(
+            //    options => options.UseSqlite(connectionString));
+
             services.AddScoped<IPersonRepository, PersonRepository>();
             services.AddMvc();
         }
@@ -51,15 +56,15 @@ namespace AgeRanger
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseApplicationInsightsRequestTelemetry();
+            //app.UseApplicationInsightsRequestTelemetry();
 
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseBrowserLink();
-            }           
+            }
 
-            app.UseApplicationInsightsExceptionTelemetry();
+            //app.UseApplicationInsightsExceptionTelemetry();
 
             app.UseStaticFiles();
 
@@ -69,7 +74,7 @@ namespace AgeRanger
                     name: "default",
                     template: "{controller=Management}/{action=Index}/{id?}/{value?}");
             });
-            
+
         }
     }
 }

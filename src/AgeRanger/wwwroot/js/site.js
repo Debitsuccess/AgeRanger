@@ -1,17 +1,10 @@
 ﻿var app = angular.module('peopleApp', ['ngResource', 'ngRoute']);
 
-app.controller('peopleController', function ($scope, peopleFactory, $window) {
+app.controller('peopleController', ['$scope','peopleFactory','$window', function ($scope, peopleFactory, $window) {
     $scope.people = [];
     
-    $scope.people = peopleFactory.getPeople().then(function (peopleData) {
-                
-        console.log('Refreshing List of people.');
-
-        $scope.people = peopleData.data;
-
-        console.log($scope.people.length);
-
-        
+    $scope.people = peopleFactory.getPeople().then(function (peopleData) {              
+        $scope.people = peopleData.data;        
     });
 
     $scope.editRow = function (id) {
@@ -25,24 +18,27 @@ app.controller('peopleController', function ($scope, peopleFactory, $window) {
             $scope.people = peopleData.data;
         });
     }
-});
+}]);
 
-app.controller('peopleEditController', function ($scope, $routeParams, peopleFactory, $window) {   
+app.controller('peopleEditController', ['$scope', '$routeParams', 'peopleFactory', '$window',
+    function ($scope, $routeParams, peopleFactory, $window) {
     peopleFactory.getPerson($routeParams.id).then(function(personData) {
         $scope.person = personData.data;
     });    
     $scope.updatePerson = function () {        
-        peopleFactory.updatePerson($scope.person);
-        $scope = $scope.$new(true);
-        $window.location.href('/');    
+        peopleFactory.updatePerson($scope.person).then(function(response) {
+            $scope = $scope.$new(true);
+            $window.location.href('/');
+        });        
     }
-});
+}]);
 
-app.controller('peopleCreateController', function ($scope, peopleFactory, $window) {
+app.controller('peopleCreateController', ['$scope','peopleFactory','$window',function ($scope, peopleFactory, $window) {
     $scope.person = {};
     $scope.updatePerson = function () {
-        peopleFactory.insertPerson($scope.person);
-        $scope = $scope.$new(true);
-        $window.location.href('/');
+        peopleFactory.insertPerson($scope.person).then(function(response) {
+            $scope = $scope.$new(true);
+            $window.location.href('/');
+        });        
     }
-});
+}]);

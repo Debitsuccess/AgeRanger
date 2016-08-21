@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using AgeRanger.Repository;
 using AgeRanger.Models;
 using System.Linq;
+using System;
 
 namespace AgeRanger.Controllers
 {
@@ -36,10 +37,10 @@ namespace AgeRanger.Controllers
         {
             return _ageRangerRepository.FindByValue(value);
         }
-
-        // POST api/people
+        
+        //POST api/people/personObject                
         [HttpPost]
-        public void Post([FromBody]PersonDto person)
+        public OkObjectResult Post([FromBody]PersonDto person)
         {
             _ageRangerRepository.Add(new Person()
             {
@@ -47,21 +48,21 @@ namespace AgeRanger.Controllers
                 LastName = person.LastName,
                 Age = person.Age
             });
-                
+            return Ok(person);
         }
-
-        // PUT api/people/5
+        
+        //PUT api/people/personObject
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]PersonDto person)
+        public OkObjectResult Put(int id, [FromBody]PersonDto person)
         {
             _ageRangerRepository.Update(person);
-        }
-
-        // DELETE api/people/5
+            return Ok(person);
+        }        
+        
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-
-        }
+            throw new NotImplementedException("Hasn't been implemented yet!");
+        }        
     }
 }

@@ -8,13 +8,13 @@ namespace AgeRanger.Repository
 {
     public class PersonRepository : IPersonRepository
     {
-        protected Microsoft.EntityFrameworkCore.DbContext _entities;        
+        protected Microsoft.EntityFrameworkCore.DbContext _entities; 
         private readonly AgeRangerContext _ageRangerContext;
         private readonly IQueryable<Person> _personQuery;
 
-        public PersonRepository()
+        public PersonRepository(AgeRangerContext ageRangerContext)
         {
-            _ageRangerContext = new AgeRangerContext();
+            _ageRangerContext = ageRangerContext;
             _personQuery = _ageRangerContext.Set<Person>();
         }
 
@@ -36,11 +36,10 @@ namespace AgeRanger.Repository
         public IEnumerable<PersonDto> FindById(int id)
         {
             var selected = _personQuery.Where(x=>x.Id == id);
-
             return MapPersonToDto(selected);
         }
 
-        private IEnumerable<PersonDto> MapPersonToDto(IQueryable<Person> selected)
+        public IEnumerable<PersonDto> MapPersonToDto(IQueryable<Person> selected)
         {
             List<PersonDto> listOfPeople = new List<PersonDto>(selected.Count());
             var ageGroups = _ageRangerContext.AgeGroup;
@@ -62,7 +61,7 @@ namespace AgeRanger.Repository
             return listOfPeople;
         }
 
-        private Person MapDtoToPerson(PersonDto personDto)
+        public Person MapDtoToPerson(PersonDto personDto)
         {
             var existingRecord = _personQuery.Where(x => x.Id == personDto.Id).FirstOrDefault();
 

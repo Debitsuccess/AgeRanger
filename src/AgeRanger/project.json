@@ -9,7 +9,8 @@
       "version": "1.0.0-preview2-final",
       "type": "build"
     },
-    "Microsoft.ApplicationInsights.AspNetCore": "1.0.0",
+    //Dependency Issues with xUnit, so excluding for the moment
+    //"Microsoft.ApplicationInsights.AspNetCore": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "1.0.0",
     "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0",

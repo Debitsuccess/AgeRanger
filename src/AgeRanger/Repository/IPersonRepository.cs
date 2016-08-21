@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using AgeRanger.Models;
 using System.Linq.Expressions;
+using System.Linq;
 
 namespace AgeRanger.Repository
 {
@@ -14,5 +15,7 @@ namespace AgeRanger.Repository
         IEnumerable<PersonDto> FindByValue(string value);
         void Remove(PersonDto key);
         void Update(PersonDto item);
+        Person MapDtoToPerson(PersonDto personDto);
+        IEnumerable<PersonDto> MapPersonToDto(IQueryable<Person> selected);
     }
 }
