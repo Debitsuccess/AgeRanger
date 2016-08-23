@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Entities.Person>
+
+@{
+    ViewBag.Title = "AgeRanger";
+}
+
+<p>
+    <div>
+        @Html.ActionLink("Add a Person", "Create")
+    </div>
+</p>
+
+<p>
+    <h2>Person List</h2>
+</p>
+
+@using (Html.BeginForm("Index", "Person", FormMethod.Post, new { id = "PersonListForm" }))
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AgeCategory)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AgeCategory)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {  id=item.Id }, new { @class = "btn btn-warning" })
+                </td>
+            </tr>
+        }
+
+    </table>
+}

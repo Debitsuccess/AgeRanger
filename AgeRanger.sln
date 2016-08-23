@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgeRanger", "AgeRanger\AgeRanger.csproj", "{A530D9B5-9FA7-47CC-87A3-D6AEA0C12D70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{EC955F04-8663-4759-ABC8-432C1DC2E892}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgeRanger.Logic", "AgeRanger.logic\AgeRanger.Logic.csproj", "{6B0A8884-A7E5-43DB-BCB7-4765B9736DA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgeRanger.Service", "AgeRanger.Service\AgeRanger.Service.csproj", "{CF336E17-7415-4E1E-A73E-6CFF5C8DA23C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.IoC", "Common.IoC\Common.IoC.csproj", "{9D7F2153-E2E8-4FB0-89F6-161F25243E6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgeRanger.UnitTest", "AgeRanger.UnitTest\AgeRanger.UnitTest.csproj", "{FA7C277F-BF72-4A01-967C-26A7AC245F98}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A530D9B5-9FA7-47CC-87A3-D6AEA0C12D70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A530D9B5-9FA7-47CC-87A3-D6AEA0C12D70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A530D9B5-9FA7-47CC-87A3-D6AEA0C12D70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A530D9B5-9FA7-47CC-87A3-D6AEA0C12D70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC955F04-8663-4759-ABC8-432C1DC2E892}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC955F04-8663-4759-ABC8-432C1DC2E892}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC955F04-8663-4759-ABC8-432C1DC2E892}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC955F04-8663-4759-ABC8-432C1DC2E892}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B0A8884-A7E5-43DB-BCB7-4765B9736DA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B0A8884-A7E5-43DB-BCB7-4765B9736DA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B0A8884-A7E5-43DB-BCB7-4765B9736DA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B0A8884-A7E5-43DB-BCB7-4765B9736DA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF336E17-7415-4E1E-A73E-6CFF5C8DA23C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF336E17-7415-4E1E-A73E-6CFF5C8DA23C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF336E17-7415-4E1E-A73E-6CFF5C8DA23C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF336E17-7415-4E1E-A73E-6CFF5C8DA23C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D7F2153-E2E8-4FB0-89F6-161F25243E6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D7F2153-E2E8-4FB0-89F6-161F25243E6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D7F2153-E2E8-4FB0-89F6-161F25243E6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D7F2153-E2E8-4FB0-89F6-161F25243E6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA7C277F-BF72-4A01-967C-26A7AC245F98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA7C277F-BF72-4A01-967C-26A7AC245F98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA7C277F-BF72-4A01-967C-26A7AC245F98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA7C277F-BF72-4A01-967C-26A7AC245F98}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45
+	EndGlobalSection
+EndGlobal
