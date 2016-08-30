@@ -44,7 +44,7 @@ namespace AgeRanger.Models
                 models = sortDir == "asc" ? models.OrderBy(x => x.AgeGroup).ToList() : models.OrderByDescending(x => x.AgeGroup).ToList();
             }
 
-            return models.Skip(startRecord).Take(count).ToList();
+            return count >= 0 ? models.Skip(startRecord).Take(count).ToList(): models.Skip(startRecord).ToList();
         }
 
         private bool FirstOrLastNameContains(Person person, string searchString)

@@ -109,7 +109,6 @@ namespace AgeRanger.Tests
             Assert.AreEqual("Lola", people[0].FirstName, "should sort by column 2");
         }
 
-        // takes 5
         [TestMethod]
         public void Build_TakesNRecords()
         {
@@ -118,6 +117,17 @@ namespace AgeRanger.Tests
             var list = GetList();
             var people = builder.Build(list, 0, 10, 0, "asc", string.Empty);
             Assert.AreEqual(10, people.Count, "list contains 10 items");
+            Assert.AreEqual("Scottie", people[0].FirstName, "should sort by column 2");
+        }
+
+        [TestMethod]
+        public void Build_TakesAllRecords()
+        {
+            var ranger = new TestAgeRanger();
+            var builder = new PeopleListBuilder(ranger);
+            var list = GetList();
+            var people = builder.Build(list, 0, -1, 0, "asc", string.Empty);
+            Assert.AreEqual(20, people.Count, "list contains All items");
             Assert.AreEqual("Scottie", people[0].FirstName, "should sort by column 2");
         }
 

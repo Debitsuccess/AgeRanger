@@ -48,26 +48,20 @@ function setup() {
 }
 
 var personViewModel = function () {
-    console.log("in personViewModel");
     var self = this;
     self.Id = ko.observable();
     self.FirstName = ko.observable();
     self.LastName = ko.observable();
     self.Age = ko.observable();
     self.AgeGroup = ko.observable();
-    
-    console.log("in personViewModel-done");
 };
 
 function Model() {
 
     var self = this;
-    console.log("1");
     self.currentRow = ko.observable();
-    console.log("3");
 
     self.setup = function() {
-        console.log("2");
 
         self.currentRow(new personViewModel());
         ko.applyBindings(self.currentRow, $('#editModal').get(0));
@@ -78,10 +72,10 @@ function Model() {
             "bProcessing": true,
             "bServerSide": true,
             "sAjaxSource": "api/People/GetPeople",
-            "paging": true,
+            "bPaginate": true,
             "bInfo": false,
             "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-            "aoColumns": [
+            "columns": [
                 { "data": "Id" },
                 { "data": "FirstName" },
                 { "data": "LastName" },
@@ -98,6 +92,12 @@ function Model() {
                     "targets": [ 0 ],
                     "visible": false,
                     "searchable": false
+                },
+                {
+                    "targets": [5],
+                    "visible": true,
+                    "searchable": false,
+                    "orderable": false
                 }
             ]
         });

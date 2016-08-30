@@ -20,12 +20,12 @@ namespace AgeRanger.Controllers
 
         // GET: api/People/GetPeople
         public dynamic GetPeople(
-        int sEcho,
-        int iDisplayStart,
-        int iDisplayLength,
-        string sSearch,
-        int iSortCol_0,
-        string sSortDir_0)
+                int sEcho,
+                int iDisplayStart,
+                int iDisplayLength,
+                string sSearch,
+                int iSortCol_0,
+                string sSortDir_0)
         {
             var builder = new PeopleListBuilder(_ranger);
             var list = db.People.ToList();
@@ -34,6 +34,7 @@ namespace AgeRanger.Controllers
             return new
             {
                 recordsTotal = list.Count,
+                recordsFiltered = list.Count,
                 aaData = models.ToArray()
             };
         }
