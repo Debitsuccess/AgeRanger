@@ -1,0 +1,27 @@
+<div>
+    {{ error }}
+</div>
+
+<table class="table table-striped">
+    <thead class="thead-inverse">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Age Group</th>
+        <th>Edit</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="per in people">
+
+        <td>{{per.firstName}}</td>
+        <td>{{per.lastName}}</td>
+        <td>{{per.age}}</td>
+        <td>{{per.ageGroup}}</td>
+        <td>
+            <button ng-click="edit(per.id)">Edit</button>
+        </td>
+    </tr>
+    </tbody>
+</table>

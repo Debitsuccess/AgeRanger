@@ -1,0 +1,32 @@
+
+
+<form name="personForm" ng-submit="add()">
+<table class="table table-striped">
+    <tbody>
+    <tr>
+        <td>FirstName</td>
+        <td>
+            <input type="text" id="firstname" required="" ng-model="Person.FirstName" />
+        </td>
+    </tr>
+    <tr>
+        <td>LastName</td>
+        <td>
+            <input type="text" id="lastname" required="" ng-model="Person.LastName"/>
+        </td>
+    </tr>
+    <tr>
+        <td>Age</td>
+        <td>
+            <input type="number" ng-model="Person.Age" min="0" required=""/>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <input type="submit" value="Add" />
+        </td>
+    </tr>
+    </tbody>
+</table>
+</form>
