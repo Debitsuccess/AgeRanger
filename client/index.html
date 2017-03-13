@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="ageRanger">
+
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="scripts/lib/angular/angular.js"></script>
+    <script src="scripts/lib/angular/angular-resource.js"></script>
+    <script src="scripts/lib/angular/angular-route.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controller/PeopleController.js"></script>
+    <script src="scripts/controller/PersonController.js"></script>
+    <script src="scripts/controller/PersonViewController.js"></script>
+    <script src="scripts/controller/PersonEditController.js"></script>
+    <script src="scripts/controller/SearchController.js"></script>
+    <script src="scripts/service/ageranger.js"></script>
+  </head>
+
+  <nav class="navbar navbar-inverse" style="border-radius: 0;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="#/search">Search</a></li>
+          <li><a href="#/people">People</a></li>
+          <li><a href="#person">Add New Person</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+  <body>
+      <div ng-view></div>
+  </body>
+
+</div>
+
+</html>

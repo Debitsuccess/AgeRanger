@@ -1,0 +1,34 @@
+<div>
+    {{message}}
+</div>
+
+<form name="personEditForm" ng-submit="Edit()">
+    <table class="table table-striped">
+        <tbody>
+        <tr>
+            <td>FirstName</td>
+            <td>
+                <input type="text" id="firstname" required="" ng-model="person.firstName" />
+            </td>
+        </tr>
+        <tr>
+            <td>LastName</td>
+            <td>
+                <input type="text" id="lastname" required="" ng-model="person.lastName"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td>
+                <input type="number" ng-model="person.age" min="0" required=""/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="submit" value="Save" />
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>

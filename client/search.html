@@ -1,0 +1,32 @@
+<form name="searchForm" ng-submit="searchPeople(search)">
+<div>
+
+    <div>
+        {{ error }}
+    </div>
+
+    <input type="text" required="" ng-model="search.key" />
+    <input type="submit" value="Search">
+
+    <hr/>
+
+    <table ng-hide="people.length==0" class="table table-striped">
+        <thead class="thead-inverse">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Age Group</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="per in people">
+            <td>{{per.firstName}}</td>
+            <td>{{per.lastName}}</td>
+            <td>{{per.age}}</td>
+            <td>{{per.ageGroup}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</form>
