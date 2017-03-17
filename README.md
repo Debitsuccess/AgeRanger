@@ -1,20 +1,35 @@
-AgeRanger is a world leading application designed to identify person's age group!
-The only problem with it is... It is not implemented - except a SQLite DB called AgeRanger.db.
+Hi
 
-To help AgeRanger to conquer the world please implement a web application that communicates with the DB mentioned above, and does the following:
+I decided to go with the following technology choices. It would have been easier for me to do this in Knockout and JQuery, 
+but I really wanted to give it ago with ReactJS, webpack etc. 
 
- - Allows user to add a new person - every person has the first name, last name, and age;
- - Displays a list of people in the DB with their First and Last names, age and their age group. The age group should be determened based on the AgeGroup DB table - a person belongs to the age group where person's age >= 
- than group's MinAge and < than group's MaxAge. Please note that MinAge and MaxAge can be null;
- - Allows user to search for a person by his/her first or last name and displays all relevant information for the person - first and last names, age, age group.
+	1 - Visual Studio 2017 (C#, MVC, WebApi)
+	2 - Typescript
+	3 - Installed via NodeJS
+			Webpack
+			ReactJS and React-dom typings
+			Awesome Typescript Loader
+		
 
-In our fantasies AgeRanger is a single page application, and our DBA has already implied that he wants us to migrate it to SQL Server some time in the future.
-And unit tests! We love unit tests!
+Notes
+	1 - I couldn't get a driver for SQLite for VS 2017, so couldn't get a data-source to appear for Entity FrameWork (gutted).
+		I tried quite a few old drivers but none of them were up to the task. Other wise I would have used Entity Framework
+		with a nice Repository and Unit of Work pattern.
+		
+	2 - I wanted to get this back to you today, so did not bring in Ninject(IOC) for the controller. I did however make them async, and use interfaces.
+		So would be easier to implement IOC from here.
+		
+	3 - I have never used SQLlite before, just standard Sql Server. So just added this DB into a file in the project. Not happy about the way I accessed
+		this via "HostingEnvironment.MapPath" rather than a config setting.  Which leads to my next comment....
+		
+	4 - I did a couple of basic unit tests that will require the code in the "RepositoryBase : GetServerPath()" to be un-commented to access the
+		correct Database path for the Unit tests to pass.
+		
+	5 - I also didn't go crazy with user feedback, only implemented the basic validation for adding a user. 
+	
+	6 - I implemented everything in the specifications so it should all run. I enjoyed the opportunity to do an architectural spike in ReactJS here,
+		and will use what I have learned here to move forward and continue learning.
+		
+Kind regards
 
-Last, but not the least - our sales manager suggests you'll get bonus points if the application will also allow user to edit existing person records and expose a WEB API.
-
-Please fork the project.
-
-You are free to use any technology and frameworks you need. However if you decide to go with third party package manager or dev tool - don't forget to mention them in the README.md of your fork.
-
-Good luck!
+Joel Belling
