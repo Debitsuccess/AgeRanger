@@ -8,7 +8,6 @@ Running this project.
 
 - How to:
 1. Open solution in Visual Studio
-2. Open a powershell command prompt windows
-2.a. Run the following command: webdriver-manager start
+2. Open a powershell command prompt windows and run the following command: webdriver-manager start
 3. Build solution
 4. Execute Tests from Test Explorer in VS
